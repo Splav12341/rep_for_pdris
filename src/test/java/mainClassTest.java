@@ -1,15 +1,15 @@
 import junit.framework.TestCase;
 
-public class mainClassTest extends TestCase {
+public class MainClassTest extends TestCase {
 
-    public void test_int_sum() {
-        mainClass s = new mainClass();
-        assertEquals(5, s.int_sum(2, 3));
+    public void testIntSum() {
+        MainClass s = new MainClass();
+        assertEquals(5, s.intSum(2, 3));
     }
 
-    public void test_double_sum() {
-        mainClass s = new mainClass();
-        assertEquals(6.0, s.double_sum(2.0, 4.0));
+    public void testDoubleSum() {
+        MainClass s = new MainClass();
+        assertEquals(6.0, s.doubleSum(2.0, 4.0));
     }
 
 }
