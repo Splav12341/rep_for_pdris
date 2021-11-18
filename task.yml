@@ -1,0 +1,31 @@
+- name: Deploy script
+  hosts: all
+  remote_user: user1
+  become: yes
+
+  tasks:
+    - name: Ping servers
+      ping:
+
+    - name: "apt-get update for Debian"
+      apt:
+        update_cache: yes
+      when: ansible_os_family=="Debian"
+
+    - name: "apt-get update for centOS"
+      package: update_cache=yes
+      when: ansible_os_family=="RedHat"
+
+
+    - name: copy src_dir
+      copy: src=./src dest=./mz/lab_3/
+        
+    - name: copy pom.xml
+      copy: src=./pom.xml dest=./mz/lab_3/
+
+    - name: copy allure.iml
+      copy: src=./allure.iml dest=./mz/lab_3/
+
+
+
+
