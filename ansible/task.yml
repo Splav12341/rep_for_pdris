@@ -1,0 +1,14 @@
+- name: Deploy script
+  hosts: all
+  tasks:
+    - name: path src directory
+      set_fact:
+        task_src: /home/mftiedu/mz/task_src
+
+    - name: create directory
+      file: state=directory path={{ task_src }}
+
+    - name: copy
+      copy:
+        src: "../target/allure-1.0-SNAPSHOT.jar"
+        dest: "{{ task_src }}"
